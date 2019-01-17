@@ -40,6 +40,9 @@ Plugin 'vim-syntastic/syntastic'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Shougo/denite.nvim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax' 
+Plugin 'will133/vim-dirdiff' 						 
 " ... more vundle plugins
 call vundle#end()
 
@@ -60,6 +63,8 @@ map <C-n> :NERDTreeToggle<CR>
 " fzf fuzzy finder
 set rtp+=~/.fzf
 
+" pandoc/markdown
+let g:pandoc#folding#level = 3
 "" syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -104,4 +109,6 @@ set nobackup
 set nowb
 set noswapfile
 
-
+if has('win32')
+	autocmd GUIEnter * simalt ~x
+endif	   
